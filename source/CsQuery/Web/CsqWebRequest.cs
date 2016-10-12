@@ -457,7 +457,10 @@ namespace CsQuery.Web
         {
             Encoding encoding = null;
             
-            if (!String.IsNullOrEmpty(response.CharacterSet)) {
+            if (!String.IsNullOrEmpty(response.ContentType) 
+                && response.ContentType.Contains("charset=")
+                && !String.IsNullOrEmpty(response.CharacterSet)
+                ) {
                 HtmlParser.HtmlEncoding.TryGetEncoding(response.CharacterSet, out encoding);
             }
             

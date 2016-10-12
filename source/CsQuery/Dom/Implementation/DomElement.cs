@@ -140,6 +140,8 @@ namespace CsQuery.Implementation
                     return new HtmlAnchorElement();
                 case HtmlData.tagFORM:
                     return new HtmlFormElement();
+                case HtmlData.tagBUTTON:
+                    return new HTMLButtonElement();
                 case HtmlData.tagINPUT:
                     return new HTMLInputElement();
                 case HtmlData.tagLABEL:
@@ -656,6 +658,26 @@ namespace CsQuery.Implementation
             set
             {
                 SetAttribute(HtmlData.CheckedAttrId, value ? "" : null);
+            }
+        }
+
+        /// <summary>
+        /// Gets or sets a value indicating whether the element is disabled.
+        /// </summary>
+        ///
+        /// <url>
+        /// https://developer.mozilla.org/en/XUL/Property/disabled
+        /// </url>
+
+        public override bool Disabled
+        {
+            get
+            {
+                return HasAttribute(HtmlData.attrDISABLED);
+            }
+            set
+            {
+                SetAttribute(HtmlData.attrDISABLED, value ? "" : null);
             }
         }
 

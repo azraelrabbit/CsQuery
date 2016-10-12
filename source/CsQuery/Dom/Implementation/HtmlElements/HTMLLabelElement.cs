@@ -1,7 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using CsQuery.HtmlParser;
 
 namespace CsQuery.Implementation
@@ -14,7 +11,7 @@ namespace CsQuery.Implementation
     /// http://dev.w3.org/html5/spec/single-page.html#the-label-element
     /// </url>
 
-    public class HTMLLabelElement : DomElement, IHTMLLabelElement
+    public class HTMLLabelElement : FormAssociatedElement, IHTMLLabelElement
     {
         /// <summary>
         /// Default constructor.
@@ -23,18 +20,6 @@ namespace CsQuery.Implementation
         public HTMLLabelElement()
             : base(HtmlData.tagLABEL)
         {
-        }
-
-        /// <summary>
-        /// The form to which the label belongs
-        /// </summary>
-
-        public IHTMLFormElement Form
-        {
-            get
-            {
-                return (IHTMLFormElement)Closest(HtmlData.tagFORM);
-            }
         }
 
         /// <summary>

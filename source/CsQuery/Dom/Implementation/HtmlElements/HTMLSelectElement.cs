@@ -1,7 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 using CsQuery.HtmlParser;
 
 namespace CsQuery.Implementation
@@ -10,7 +8,7 @@ namespace CsQuery.Implementation
     /// An HTML SELECT element.
     /// </summary>
 
-    public class HTMLSelectElement : DomElement, IHTMLSelectElement
+    public class HTMLSelectElement : FormSubmittableElement, IHTMLSelectElement
     {
         /// <summary>
         /// Default constructor.
